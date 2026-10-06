@@ -403,7 +403,149 @@
   </footer>
 
   <script>
-    const WHATSAPP_NUMBER = "201203580875";
+   <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const WHATSAPP_NUMBER = "201203580875";
+  const PAYMENT_NUMBER = "+20 12 03580875";
+  const PROFIT = 30;
+
+  const products = [
+    { name: "100 جوهرة 💎", basePrice: 50 },
+    { name: "310 جوهرة 💎", basePrice: 150 },
+    { name: "520 جوهرة 💎", basePrice: 250 },
+    { name: "1060 جوهرة 💎", basePrice: 500 },
+    { name: "2180 جوهرة 💎", basePrice: 1000 },
+    { name: "5600 جوهرة 💎", basePrice: 4300 },
+    { name: "العضوية الأسبوعية ⭐", basePrice: 120 }
+  ];
+
+  const GAME_IMAGE =
+    "https://images.unsplash.com/photo-1542751371-adc384a05e?w=900";
+
+  function money(number) {
+    return number.toLocaleString("ar-EG") + " جنيه";
+  }
+
+  function renderProducts() {
+    const container = document.getElementById("products");
+
+    if (!container) {
+      return;
+    }
+
+    container.innerHTML = "";
+
+    products.forEach(function (product, index) {
+      const finalPrice = product.basePrice + PROFIT;
+
+      const card = document.createElement("div");
+      card.className = "product";
+
+      card.innerHTML = `
+        <img
+          class="game-image"
+          src="${GAME_IMAGE}"
+          alt="Free Fire">
+
+        <h3>${product.name}</h3>
+
+        <div class="price">
+          ${money(finalPrice)}
+        </div>
+
+        <div class="base">
+          السعر الأساسي:
+          ${money(product.basePrice)}
+          + ${PROFIT} جنيه
+        </div>
+
+        <input
+          id="player-${index}"
+          class="player"
+          type="text"
+          inputmode="numeric"
+          maxlength="20"
+          placeholder="اكتب Player ID">
+
+        <button
+          type="button"
+          class="order"
+          data-index="${index}">
+
+          📲 اطلب الآن على واتساب
+        </button>
+      `;
+
+      const orderButton = card.querySelector(".order");
+
+      orderButton.addEventListener("click", function () {
+        sendOrder(index);
+      });
+
+      container.appendChild(card);
+    });
+  }
+
+  function sendOrder(index) {
+    const input = document.getElementById("player-" + index);
+    const playerID = input.value.trim();
+
+    if (!/^[0-9]{4,20}$/.test(playerID)) {
+      alert("من فضلك اكتب Player ID صحيحاً بالأرقام فقط.");
+      input.focus();
+      return;
+    }
+
+    const product = products[index];
+    const finalPrice = product.basePrice + PROFIT;
+
+    const message = `طلب جديد من البرازيلي & medo Store
+
+🎮 اللعبة: Free Fire
+
+📦 الباقة: ${product.name}
+
+🆔 Player ID: ${playerID}
+
+💰 السعر: ${finalPrice} جنيه
+
+🟠 طريقة الدفع: Orange Cash
+
+📱 رقم الدفع: ${PAYMENT_NUMBER}
+
+سأرسل إيصال الدفع هنا.`;
+
+    const whatsappURL =
+      "https://wa.me/" +
+      WHATSAPP_NUMBER +
+      "?text=" +
+      encodeURIComponent(message);
+
+    window.open(whatsappURL, "_blank");
+  }
+
+  window.showPayment = function () {
+    const paymentBox = document.getElementById("paymentBox");
+
+    if (paymentBox.style.display === "block") {
+      paymentBox.style.display = "none";
+    } else {
+      paymentBox.style.display = "block";
+    }
+  };
+
+  window.copyNumber = async function () {
+    try {
+      await navigator.clipboard.writeText(PAYMENT_NUMBER);
+      alert("تم نسخ رقم Orange Cash ✅");
+    } catch (error) {
+      alert("رقم الدفع: " + PAYMENT_NUMBER);
+    }
+  };
+
+  renderProducts();
+});
+</script> const WHATSAPP_NUMBER = "201203580875";
     const PAYMENT_NUMBER = "+20 12 03580875";
     const PROFIT = 30;
 
