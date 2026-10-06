@@ -1,671 +1,518 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>البرازيلي & medo Store</title>
+  <title>البرازيلي & medo Store</title>
 
-<meta name="description"
-content="البرازيلي & medo Store - متجر شحن Free Fire">
+  <meta name="description" content="البرازيلي & medo Store - متجر شحن Free Fire">
 
-<style>
-
-*{
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    margin:0;
-    font-family:Arial,Tahoma,sans-serif;
-    background:
-    radial-gradient(circle at top,#202938 0,#090c12 45%);
-    color:#fff;
-}
-
-/* HEADER */
-
-header{
-    text-align:center;
-    padding:55px 15px 40px;
-    background:linear-gradient(135deg,#111722,#293241);
-    border-bottom:1px solid #394251;
-}
-
-.logo{
-    font-size:clamp(32px,8vw,58px);
-    font-weight:900;
-}
-
-.logo span{
-    color:#ff8a00;
-}
-
-header p{
-    color:#cbd1da;
-    font-size:18px;
-}
-
-.badge{
-    display:inline-block;
-    padding:8px 16px;
-    border-radius:30px;
-    background:#171d27;
-    border:1px solid #394251;
-    color:#bfc7d2;
-    font-size:13px;
-}
-
-/* MAIN */
-
-main{
-    max-width:1100px;
-    margin:auto;
-    padding:20px 15px;
-}
-
-/* NOTICE */
-
-.notice{
-    background:#121720;
-    border:1px solid #303947;
-    border-right:4px solid #ff8a00;
-    border-radius:18px;
-    padding:20px;
-    margin:20px 0;
-}
-
-.notice h3{
-    margin-top:0;
-    color:#ff9a2f;
-}
-
-/* TITLE */
-
-.section-title{
-    margin-top:35px;
-}
-
-.section-title h2{
-    font-size:30px;
-    margin-bottom:0;
-}
-
-.section-title p{
-    color:#9da6b4;
-}
-
-/* PRODUCTS */
-
-.products{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:18px;
-    margin-top:20px;
-}
-
-.product{
-    background:linear-gradient(180deg,#161c26,#10141b);
-    border:1px solid #303947;
-    border-radius:18px;
-    padding:15px;
-    transition:.2s;
-}
-
-.product:hover{
-    transform:translateY(-5px);
-    border-color:#ff8a00;
-}
-
-.game-image{
-    width:100%;
-    height:145px;
-    object-fit:cover;
-    border-radius:13px;
-    display:block;
-}
-
-.product h3{
-    font-size:21px;
-    margin:13px 0 2px;
-}
-
-.price{
-    color:#ff9a2f;
-    font-size:23px;
-    font-weight:900;
-}
-
-.base{
-    color:#818b9a;
-    font-size:12px;
-}
-
-.player{
-    width:100%;
-    margin-top:12px;
-    padding:13px;
-    background:#080b10;
-    color:white;
-    border:1px solid #3b4554;
-    border-radius:10px;
-    outline:none;
-    font-size:15px;
-}
-
-.player:focus{
-    border-color:#ff8a00;
-}
-
-.order{
-    display:block;
-    text-align:center;
-    text-decoration:none;
-    margin-top:10px;
-    padding:12px;
-    border-radius:10px;
-    background:#20c86b;
-    color:#06140c;
-    font-weight:900;
-}
-
-.order:hover{
-    background:#2ce07a;
-}
-
-/* PAYMENT */
-
-.payment{
-    margin-top:30px;
-    padding:25px;
-    background:#121720;
-    border:1px solid #303947;
-    border-radius:18px;
-    text-align:center;
-}
-
-.payment-icon{
-    font-size:42px;
-}
-
-.payment h2{
-    margin:5px 0;
-}
-
-.payment p{
-    color:#aab2be;
-}
-
-.main-button{
-    width:100%;
-    padding:14px;
-    border:0;
-    border-radius:11px;
-    background:linear-gradient(135deg,#ff7900,#ffa02e);
-    color:#111;
-    font-size:16px;
-    font-weight:900;
-    cursor:pointer;
-}
-
-.payment-box{
-    display:none;
-    margin-top:15px;
-    padding:20px;
-    background:#080b10;
-    border:1px dashed #ff8a00;
-    border-radius:14px;
-}
-
-.payment-number{
-    display:block;
-    direction:ltr;
-    font-size:27px;
-    color:#ff9a2f;
-    font-weight:900;
-    margin:8px 0;
-}
-
-.copy{
-    border:0;
-    padding:10px 18px;
-    border-radius:9px;
-    background:#303845;
-    color:white;
-    cursor:pointer;
-}
-
-/* STEPS */
-
-.steps{
-    margin-top:25px;
-    padding:23px;
-    background:#121720;
-    border:1px solid #303947;
-    border-radius:18px;
-}
-
-.steps li{
-    margin:9px 0;
-}
-
-.warning{
-    margin-top:18px;
-    padding:13px;
-    border-radius:10px;
-    background:#2b200d;
-    color:#ffc266;
-}
-
-/* CONTACT */
-
-.contact{
-    margin-top:25px;
-    padding:25px;
-    text-align:center;
-    background:#121720;
-    border:1px solid #303947;
-    border-radius:18px;
-}
-
-.contact-button{
-    display:inline-block;
-    padding:13px 25px;
-    border-radius:10px;
-    background:#20c86b;
-    color:#06140c;
-    text-decoration:none;
-    font-weight:900;
-}
-
-/* FOOTER */
-
-footer{
-    text-align:center;
-    margin-top:35px;
-    padding:35px 15px;
-    border-top:1px solid #252c37;
-    color:#8d96a5;
-}
-
-.footer-logo{
-    color:#ff9a2f;
-    font-size:21px;
-    font-weight:900;
-}
-
-/* MOBILE */
-
-@media(max-width:600px){
-
-    header{
-        padding:40px 12px;
+  <style>
+    * {
+      box-sizing: border-box;
     }
 
-    .logo{
-        font-size:32px;
+    html {
+      scroll-behavior: smooth;
     }
 
-    main{
-        padding:12px;
+    body {
+      margin: 0;
+      font-family: Arial, Tahoma, sans-serif;
+      background: radial-gradient(circle at top, #202938 0, #090c12 45%);
+      color: #ffffff;
     }
 
-    .products{
-        grid-template-columns:1fr;
+    header {
+      text-align: center;
+      padding: 55px 15px 40px;
+      background: linear-gradient(135deg, #111722, #293241);
+      border-bottom: 1px solid #394251;
     }
 
-    .payment-number{
-        font-size:22px;
+    .logo {
+      font-size: clamp(32px, 8vw, 58px);
+      font-weight: 900;
     }
 
-}
+    .logo span {
+      color: #ff8a00;
+    }
 
-</style>
+    header p {
+      color: #cbd1da;
+      font-size: 18px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 30px;
+      background: #171d27;
+      border: 1px solid #394251;
+      color: #bfc7d2;
+      font-size: 13px;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px 15px;
+    }
+
+    .notice,
+    .payment,
+    .steps,
+    .contact {
+      background: #121720;
+      border: 1px solid #303947;
+      border-radius: 18px;
+    }
+
+    .notice {
+      border-right: 4px solid #ff8a00;
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    .notice h3 {
+      margin-top: 0;
+      color: #ff9a2f;
+    }
+
+    .section-title {
+      margin-top: 35px;
+    }
+
+    .section-title h2 {
+      font-size: 30px;
+      margin-bottom: 0;
+    }
+
+    .section-title p {
+      color: #9da6b4;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .product {
+      background: linear-gradient(180deg, #161c26, #10141b);
+      border: 1px solid #303947;
+      border-radius: 18px;
+      padding: 15px;
+      transition: 0.2s;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+      border-color: #ff8a00;
+    }
+
+    .game-image {
+      width: 100%;
+      height: 145px;
+      object-fit: cover;
+      border-radius: 13px;
+      display: block;
+    }
+
+    .product h3 {
+      font-size: 21px;
+      margin: 13px 0 2px;
+    }
+
+    .price {
+      color: #ff9a2f;
+      font-size: 23px;
+      font-weight: 900;
+    }
+
+    .base {
+      color: #818b9a;
+      font-size: 12px;
+    }
+
+    .player {
+      width: 100%;
+      margin-top: 12px;
+      padding: 13px;
+      background: #080b10;
+      color: white;
+      border: 1px solid #3b4554;
+      border-radius: 10px;
+      outline: none;
+      font-size: 15px;
+    }
+
+    .player:focus {
+      border-color: #ff8a00;
+    }
+
+    .order {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      margin-top: 10px;
+      padding: 12px;
+      border-radius: 10px;
+      background: #20c86b;
+      color: #06140c;
+      font-weight: 900;
+    }
+
+    .order:hover {
+      background: #2ce07a;
+    }
+
+    .payment {
+      margin-top: 30px;
+      padding: 25px;
+      text-align: center;
+    }
+
+    .payment-icon {
+      font-size: 42px;
+    }
+
+    .payment h2 {
+      margin: 5px 0;
+    }
+
+    .payment p {
+      color: #aab2be;
+    }
+
+    .main-button {
+      width: 100%;
+      padding: 14px;
+      border: 0;
+      border-radius: 11px;
+      background: linear-gradient(135deg, #ff7900, #ffa02e);
+      color: #111;
+      font-size: 16px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .payment-box {
+      display: none;
+      margin-top: 15px;
+      padding: 20px;
+      background: #080b10;
+      border: 1px dashed #ff8a00;
+      border-radius: 14px;
+    }
+
+    .payment-number {
+      display: block;
+      direction: ltr;
+      font-size: 27px;
+      color: #ff9a2f;
+      font-weight: 900;
+      margin: 8px 0;
+    }
+
+    .copy {
+      border: 0;
+      padding: 10px 18px;
+      border-radius: 9px;
+      background: #303845;
+      color: white;
+      cursor: pointer;
+    }
+
+    .steps {
+      margin-top: 25px;
+      padding: 23px;
+    }
+
+    .steps li {
+      margin: 9px 0;
+    }
+
+    .warning {
+      margin-top: 18px;
+      padding: 13px;
+      border-radius: 10px;
+      background: #2b200d;
+      color: #ffc266;
+    }
+
+    .contact {
+      margin-top: 25px;
+      padding: 25px;
+      text-align: center;
+    }
+
+    .contact-button {
+      display: inline-block;
+      padding: 13px 25px;
+      border-radius: 10px;
+      background: #20c86b;
+      color: #06140c;
+      text-decoration: none;
+      font-weight: 900;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 35px;
+      padding: 35px 15px;
+      border-top: 1px solid #252c37;
+      color: #8d96a5;
+    }
+
+    .footer-logo {
+      color: #ff9a2f;
+      font-size: 21px;
+      font-weight: 900;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 40px 12px;
+      }
+
+      .logo {
+        font-size: 32px;
+      }
+
+      main {
+        padding: 12px;
+      }
+
+      .products {
+        grid-template-columns: 1fr;
+      }
+
+      .payment-number {
+        font-size: 22px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-
-<header>
-
+  <header>
     <div class="logo">
-        البرازيلي <span>&amp; medo</span> Store
+      البرازيلي <span>&amp; medo</span> Store
     </div>
 
-    <p>
-        🎮 متجر شحن ألعاب سريع وسهل
-    </p>
+    <p>🎮 متجر شحن ألعاب سريع وسهل</p>
 
     <div class="badge">
-        🛡️ Player ID فقط — لا نطلب كلمة مرور الحساب
+      🛡️ Player ID فقط — لا نطلب كلمة مرور الحساب
+    </div>
+  </header>
+
+  <main>
+
+    <section class="notice">
+      <h3>⚡ طريقة الطلب</h3>
+
+      <p>
+        اختر الباقة، اكتب Player ID، اضغط «اطلب الآن»،
+        ثم ادفع عبر Orange Cash وأرسل إيصال الدفع على واتساب.
+      </p>
+    </section>
+
+    <div class="section-title">
+      <h2>🔥 Free Fire</h2>
+      <p>اختر الباقة المناسبة لك</p>
     </div>
 
-</header>
+    <div id="products" class="products"></div>
 
+    <section class="payment">
+      <div class="payment-icon">🟠</div>
 
-<main>
+      <h2>الدفع عبر Orange Cash</h2>
 
+      <p>اضغط على الزر لإظهار رقم الدفع</p>
 
-<!-- طريقة الطلب -->
-
-<section class="notice">
-
-    <h3>⚡ طريقة الطلب</h3>
-
-    <p>
-        اختر الباقة، اكتب Player ID، اضغط
-        «اطلب الآن»، ثم ادفع عبر Orange Cash
-        وأرسل إيصال الدفع على واتساب.
-    </p>
-
-</section>
-
-
-<!-- FREE FIRE -->
-
-<div class="section-title">
-
-    <h2>🔥 Free Fire</h2>
-
-    <p>
-        اختر الباقة المناسبة لك
-    </p>
-
-</div>
-
-
-<div
-    id="products"
-    class="products">
-</div>
-
-
-<!-- PAYMENT -->
-
-<section class="payment">
-
-    <div class="payment-icon">
-        🟠
-    </div>
-
-    <h2>
-        الدفع عبر Orange Cash
-    </h2>
-
-    <p>
-        اضغط على الزر لإظهار رقم الدفع
-    </p>
-
-    <button
-        class="main-button"
-        onclick="showPayment()">
-
+      <button class="main-button" type="button" onclick="showPayment()">
         💳 إظهار رقم الدفع
+      </button>
 
-    </button>
-
-
-    <div
-        id="paymentBox"
-        class="payment-box">
-
-        <p>
-            رقم Orange Cash
-        </p>
+      <div id="paymentBox" class="payment-box">
+        <p>رقم Orange Cash</p>
 
         <strong class="payment-number">
-            +20 12 03580875
+          +20 12 03580875
         </strong>
 
-        <button
-            class="copy"
-            onclick="copyNumber()">
-
-            📋 نسخ الرقم
-
+        <button class="copy" type="button" onclick="copyNumber()">
+          📋 نسخ الرقم
         </button>
+      </div>
+    </section>
 
-    </div>
+    <section class="steps">
+      <h2>🛡️ خطوات الشحن</h2>
 
-</section>
+      <ol>
+        <li>اختر باقة Free Fire.</li>
+        <li>اكتب Player ID الصحيح.</li>
+        <li>حوّل قيمة الطلب إلى رقم Orange Cash.</li>
+        <li>احتفظ بإيصال الدفع.</li>
+        <li>اضغط «اطلب الآن» وأرسل الإيصال على واتساب.</li>
+      </ol>
 
-
-<!-- STEPS -->
-
-<section class="steps">
-
-    <h2>
-        🛡️ خطوات الشحن
-    </h2>
-
-    <ol>
-
-        <li>
-            اختر باقة Free Fire.
-        </li>
-
-        <li>
-            اكتب Player ID الصحيح.
-        </li>
-
-        <li>
-            حوّل قيمة الطلب إلى رقم Orange Cash.
-        </li>
-
-        <li>
-            احتفظ بإيصال الدفع.
-        </li>
-
-        <li>
-            اضغط «اطلب الآن» وأرسل الإيصال على واتساب.
-        </li>
-
-    </ol>
-
-
-    <div class="warning">
-
+      <div class="warning">
         ⚠️ لا ترسل كلمة مرور حساب Free Fire.
         الموقع يحتاج Player ID فقط.
+      </div>
+    </section>
 
-    </div>
+    <section class="contact">
+      <h2>📞 خدمة العملاء</h2>
 
-</section>
+      <p>للطلبات والاستفسارات تواصل معنا على واتساب.</p>
 
-
-<!-- CONTACT -->
-
-<section class="contact">
-
-    <h2>
-        📞 خدمة العملاء
-    </h2>
-
-    <p>
-        للطلبات والاستفسارات تواصل معنا على واتساب.
-    </p>
-
-    <a
+      <a
         class="contact-button"
         href="https://wa.me/201203580875"
-        target="_blank">
+        target="_blank"
+        rel="noopener noreferrer">
 
         💬 تواصل معنا
+      </a>
+    </section>
 
-    </a>
+  </main>
 
-</section>
-
-
-</main>
-
-
-<footer>
-
+  <footer>
     <div class="footer-logo">
-        البرازيلي &amp; medo Store
+      البرازيلي &amp; medo Store
     </div>
 
-    <p>
-        شحن ألعاب أونلاين
-    </p>
+    <p>شحن ألعاب أونلاين</p>
 
     <p>
-        © 2026 البرازيلي &amp; medo Store
-        <br>
-        جميع الحقوق محفوظة
+      © 2026 البرازيلي &amp; medo Store
+      <br>
+      جميع الحقوق محفوظة
     </p>
+  </footer>
 
-</footer>
+  <script>
+    const WHATSAPP_NUMBER = "201203580875";
+    const PAYMENT_NUMBER = "+20 12 03580875";
+    const PROFIT = 30;
 
+    const products = [
+      {
+        name: "100 جوهرة 💎",
+        basePrice: 50
+      },
+      {
+        name: "310 جوهرة 💎",
+        basePrice: 150
+      },
+      {
+        name: "520 جوهرة 💎",
+        basePrice: 250
+      },
+      {
+        name: "1060 جوهرة 💎",
+        basePrice: 500
+      },
+      {
+        name: "2180 جوهرة 💎",
+        basePrice: 1000
+      },
+      {
+        name: "5600 جوهرة 💎",
+        basePrice: 4300
+      },
+      {
+        name: "العضوية الأسبوعية ⭐",
+        basePrice: 120
+      }
+    ];
 
-<script>
+    const GAME_IMAGE =
+      "https://images.unsplash.com/photo-1542751371-adc384a05e?w=900";
 
-/* =========================================
-   إعدادات المتجر
-========================================= */
-
-const WHATSAPP_NUMBER = "201203580875";
-
-const PAYMENT_NUMBER = "+20 12 03580875";
-
-const PROFIT = 30;
-
-
-/* =========================================
-   الباقات
-========================================= */
-
-const products = [
-
-    {
-        name:"100 جوهرة 💎",
-        basePrice:50
-    },
-
-    {
-        name:"310 جوهرة 💎",
-        basePrice:150
-    },
-
-    {
-        name:"520 جوهرة 💎",
-        basePrice:250
-    },
-
-    {
-        name:"1060 جوهرة 💎",
-        basePrice:500
-    },
-
-    {
-        name:"2180 جوهرة 💎",
-        basePrice:1000
-    },
-
-    {
-        name:"5600 جوهرة 💎",
-        basePrice:4300
-    },
-
-    {
-        name:"العضوية الأسبوعية ⭐",
-        basePrice:120
+    function money(number) {
+      return number.toLocaleString("ar-EG") + " جنيه";
     }
 
-];
+    function renderProducts() {
+      const container = document.getElementById("products");
 
+      container.innerHTML = "";
 
-/* =========================================
-   صورة العرض
-========================================= */
+      products.forEach(function(product, index) {
+        const finalPrice = product.basePrice + PROFIT;
 
-const GAME_IMAGE =
-"https://images.unsplash.com/photo-1542751371-adc384a05e?auto=format&fit=crop&w=900&q=80";
+        const card = document.createElement("div");
+        card.className = "product";
 
+        card.innerHTML = `
+          <img
+            class="game-image"
+            src="${GAME_IMAGE}"
+            alt="Free Fire">
 
-/* =========================================
-   تنسيق السعر
-========================================= */
+          <h3>${product.name}</h3>
 
-function money(number){
+          <div class="price">
+            ${money(finalPrice)}
+          </div>
 
-    return number.toLocaleString("ar-EG")
-    + " جنيه";
+          <div class="base">
+            السعر الأساسي:
+            ${money(product.basePrice)}
+            + ${PROFIT} جنيه
+          </div>
 
-}
+          <input
+            id="player-${index}"
+            class="player"
+            type="text"
+            inputmode="numeric"
+            maxlength="20"
+            placeholder="اكتب Player ID">
 
+          <a
+            href="#"
+            class="order"
+            data-index="${index}">
 
-/* =========================================
-   إنشاء الباقات
-========================================= */
+            📲 اطلب الآن على واتساب
+          </a>
+        `;
 
-function renderProducts(){
+        const orderButton = card.querySelector(".order");
 
-    const container =
-    document.getElementById("products");
+        orderButton.addEventListener("click", function(event) {
+          event.preventDefault();
+          sendOrder(index);
+        });
 
-    container.innerHTML = "";
+        container.appendChild(card);
+      });
+    }
 
+    function sendOrder(index) {
+      const input = document.getElementById("player-" + index);
+      const playerID = input.value.trim();
 
-    products.forEach(
-        function(product,index){
+      if (!/^[0-9]{4,20}$/.test(playerID)) {
+        alert("من فضلك اكتب Player ID صحيحاً بالأرقام فقط.");
+        input.focus();
+        return;
+      }
 
-            const finalPrice =
-            product.basePrice + PROFIT;
+      const product = products[index];
+      const finalPrice = product.basePrice + PROFIT;
 
-
-            const card =
-            document.createElement("div");
-
-
-            card.className =
-            "product";
-
-
-            card.innerHTML = `
-
-                <img
-                    class="game-image"
-                    src="${GAME_IMAGE}"
-                    alt="Free Fire">
-
-                <h3>
-                    ${product.name}
-                </h3>
-
-                <div class="price">
-                    ${money(finalPrice)}
-                </div>
-
-                <div class="base">
-                    السعر الأساسي:
-                    ${money(product.basePrice)}
-                    + ${PROFIT} جنيه
-                </div>
-
-                <input
-                    id="player-${index}"
-                    class="player"
-                    type="text"
-                    inputmode="numeric"
-                    maxlength="20"
-                    placeholder="اكتب Player ID">
-
-                <a
-                    href="#"
-                    class="order"
-                    onclick="
-                    sendOrder(${index});
-                    return false;
-                    ">
-
-                    📲 اطلب الآن على واتساب
-
-                </a>
-
-  
+      const mes
